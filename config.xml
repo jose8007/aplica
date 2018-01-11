@@ -19,11 +19,13 @@
     <preference name="AndroidLaunchMode" value="singleTop"/>
 	<preference name="splashscreen" value="splash"/>
 	<preference name="splashScreenDelay" value="10000"/>
+	<splash src="package-assets/iconos/screen426.png" density="ldpi" width="320" height="426" orientation="portrait"/>
+	<splash src="package-assets/iconos/screen470.png" density="mdpi" width="320" height="470" orientation="portrait"/>
+	<splash src="package-assets/iconos/screen640.png" density="hdpi" width="480" height="640" orientation="portrait"/>
+	<splash src="package-assets/iconos/screen960.png" density="xhdpi" width="720" height="960" orientation="portrait"/>
+	<plugin name="SplashScreen" value="org.apache.cordova.splashscreen" version="0.3.0"/>
+	<preference name="SplashScreenBackgroundColor" value="#2383b5" />
 </platform>
-<splash platform="android" src="package-assets/iconos/screen426.png" density="ldpi" width="320" height="426" orientation="portrait"/>
-<splash platform="android" src="package-assets/iconos/screen470.png" density="mdpi" width="320" height="470" orientation="portrait"/>
-<splash platform="android" src="package-assets/iconos/screen640.png" density="hdpi" width="480" height="640" orientation="portrait"/>
-<splash platform="android" src="package-assets/iconos/screen960.png" density="xhdpi" width="720" height="960" orientation="portrait"/>
 
 
 <icon platform="android" src="package-assets/iconos/icontablet.png" density="ldpi" width="36" height="36"/>
