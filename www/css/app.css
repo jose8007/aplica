@@ -19,7 +19,6 @@ body {
 html {
     -ms-touch-action: pan-x ;
 }
-
 /* Recommended for Windows 8 Phone */
 /* SOURCE: http://www.excellentwebworld.com/common-problems-solution-for-windows-phone-8-phonegap */
 body {
@@ -460,34 +459,6 @@ height: 110px;}
     font-size: 0.9em;
 }
 
-.menu-temas {
-    list-style: none;
-    width: 30%;
-    padding: 0;
-    clear: both;
-    float: right;
-    margin-right: 8px;
-    margin-top: 0px;
-    
-}
-
-
-
-.menu-temas a {
-    color: black;
-    
-}
-
-.menu-temas li{
-    color: white;
-    display: inline;
-    float: right;
-    margin: 5px;
-    padding: 5px;
-    font-size: 0.9em;
-}
-.menu-temas li:hover{ background-color:#40ac97;}
-.menu-temas li a{text-decoration: none; color: white;}
 
 #primero{ background-image: url('/imag/backprimeroBSa.jpg');
     background-size: cover;

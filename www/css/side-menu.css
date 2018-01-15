@@ -2,8 +2,11 @@ body {
 background: #ffffff;
 }
 
+.main{
+background-color:#2383b5;    
+}
 .header {
-    background-color:#2383b5;
+    padding-top: 5px;
     height: 160px;
     overflow: hidden;
 }
@@ -14,6 +17,18 @@ background: #ffffff;
     overflow: hidden;
 }
 
+.header2 li{
+    float: left;
+    color: white;
+    list-style: none;
+    margin-right: 5px;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.header2 li:hover{
+    background-color:cadetblue;
+}
 
 .pure-img-responsive {
     max-width: 100%;
@@ -35,6 +50,7 @@ Add transition to containers so they can push in and out.
     -o-transition: all 0.0s ease-out;
     transition: all 0.0s ease-out;
 }
+
 
 /*
 This is the parent `<div>` that contains the menu and the content area.
