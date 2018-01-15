@@ -24,10 +24,12 @@
         if ((params.Cole))
         xpath = "Catalogos/Catalogo[nivelEduca = '"+params.Cole+"']";
         
-var  dsProducts1 = new Spry.Data.XMLDataSet("recipeproblem.xml", xpath,{sortOnLoad: "id", sortOrderOnLoad: "descending", distinctOnLoad: true});
+var  dsProducts1 = new Spry.Data.XMLDataSet("recipeproblem.xml", xpath,{sortOnLoad: "id", sortOrderOnLoad: "descending", distinctOnLoad: true, distinctFieldsOnLoad:['clave1',]});
 dsProducts1.setColumnType("id", "number");     
   
-
+var  dsProducts2 = new Spry.Data.XMLDataSet("recipeproblem.xml", xpath,{sortOnLoad: "id", sortOrderOnLoad: "descending", distinctOnLoad: true, distinctFieldsOnLoad:['clave1',]});
+dsProducts1.setColumnType("id", "number");
+     
      function dan(b)
      {
     var tf = document.getElementsByTagName("li")[b].textContent; 
@@ -48,37 +50,10 @@ dsProducts1.setColumnType("id", "number");
 
     <div id="main">
                 <div id="grafnivel"><img id="imp1" src="imag/" height="200" width="150"></div>
-                <div class="header2">
-            
-                <ul class="menu-temas">
-                <li><a onclick="dan(0)">Creatividad</a></li>
-                <li ><a onclick="dan(1);">Animales</a></li>
-                <li ><a onclick="dan(2);">Familia</a></li>
-                <li ><a onclick="dan(3);">Fantasía</a></li>
-                    
-                <li><a onclick="dan(4)">Amor</a></li>
-                <li ><a onclick="dan(5);">Vida Escolar</a></li>
-                <li ><a onclick="dan(6);">Ecología</a></li>
-                <li ><a onclick="dan(7);">Aventura</a></li>                    
-                    
-                <li><a onclick="dan(8)">Identidad</a></li>
-                <li ><a onclick="dan(9);">Misterio</a></li>
-                <li ><a onclick="dan(10);">Naturaleza</a></li>
-                <li ><a onclick="dan(11);">Convivencia</a></li>             
-                 <li ><a onclick="dan(12);">Compartir</a></li>                 <li ><a onclick="dan(13);">Juego de palabras</a></li>
-                <li ><a onclick="dan(14);">Valentía</a></li> 
-                <li ><a onclick="dan(15);">Bullying</a></li>
-                <li ><a onclick="dan(16);">Solidaridad</a></li>
-                 <li ><a onclick="dan(17);">Soledad</a></li>
-                <li ><a onclick="dan(18);">Amistad</a></li>
-                <li ><a onclick="dan(19);">Cotidianidad</a></li> 
-                <li ><a onclick="dan(20);">Libertad</a></li>
-                <li ><a onclick="dan(21);">Tradición</a></li>
-                <li ><a onclick="dan(22);">Discriminación</a></li>
-                <li ><a onclick="dan(23);">Muerte</a></li>
-                <li style="background-color:orange" ><a onclick="dsProducts1.filter(null);">Ver todos los libros</a></li>
-           </ul>                    
-        </div>
+        
+                <div class="header2" spry:region="dsProducts2" spry:repeat="dsProducts2">
+                <li><a onclick="dan({ds_RowNumber});">{clave1}</a></li>
+                </div>
 
         </div>
 <div id="men1">
