@@ -24,7 +24,7 @@
         if ((params.Cole))
         xpath = "Catalogos/Catalogo[nivelEduca = '"+params.Cole+"']";
         
-var  dsProducts1 = new Spry.Data.XMLDataSet("recipeproblem.xml", xpath,{sortOnLoad: "id", sortOrderOnLoad: "descending", distinctOnLoad: true, distinctFieldsOnLoad:['clave1',]});
+var  dsProducts1 = new Spry.Data.XMLDataSet("recipeproblem.xml", xpath,{sortOnLoad: "id", sortOrderOnLoad: "descending"});
 dsProducts1.setColumnType("id", "number");     
   
 var  dsProducts2 = new Spry.Data.XMLDataSet("recipeproblem.xml", xpath,{sortOnLoad: "id", sortOrderOnLoad: "descending", distinctOnLoad: true, distinctFieldsOnLoad:['clave1',]});
@@ -32,6 +32,7 @@ dsProducts1.setColumnType("id", "number");
      
      function dan(b)
      {
+    document.getElementById("encontrados2").style.display="block";
     var tf = document.getElementsByTagName("li")[b].textContent; 
 	var filterFunc = function(dataset, row, rowNumber)
 	{	if (row["clave1"] == tf)
@@ -39,6 +40,12 @@ dsProducts1.setColumnType("id", "number");
 		return null;
 	};
 	dsProducts1.filter(filterFunc);
+    };
+     
+     
+     function dos()
+    {
+    location='CatagPlan.html?Cole='+de;     
     }
 
  var pvCities = new Spry.Data.PagedView(dsProducts1); 
@@ -50,6 +57,7 @@ dsProducts1.setColumnType("id", "number");
 
     <div id="main">
                 <div id="grafnivel"><img id="imp1" src="imag/" height="200" width="150"></div>
+           
         
                 <div class="header2" spry:region="dsProducts2" spry:repeat="dsProducts2">
                 <li><a onclick="dan({ds_RowNumber});">{clave1}</a></li>
@@ -67,6 +75,7 @@ dsProducts1.setColumnType("id", "number");
 </svg></a>
     
     <a id="encontrados" spry:region="pvCities">{ds_UnfilteredRowCount} libros encontrados</a>
+     <a id="encontrados2" onclick="dos();">Ver todos</a>
     
         <a id="btn1" href="planlector.html">
         <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0"
@@ -111,35 +120,4 @@ dsProducts1.setColumnType("id", "number");
 	<!-- Footer -->
 
 	</body>
-    <script>
-
-        
-        var de = params.Cole;
-        if (de == "Primero EB"){        
-        document.getElementById("imp1").src = "imag/imagPrimerAA.png";}
-        if (de == "Segundo EB"){        
-        document.getElementById("imp1").src = "imag/imagSegundoAA.png";}
-        if (de == "Tercero EB"){        
-        document.getElementById("imp1").src = "imag/imagTerceroAA.png";}
-        if (de == "Cuarto EB"){        
-        document.getElementById("imp1").src = "imag/imagCuartoAA.png";}        
-        if (de == "Quinto EB"){        
-        document.getElementById("imp1").src = "imag/imagQuintoAA.png";}
-        if (de == "Sexto EB"){        
-        document.getElementById("imp1").src = "imag/imagSextoAA.png";}
-        if (de == "Septimo EB"){        
-        document.getElementById("imp1").src = "imag/imagSeptimoAA.png";}
-        if (de == "Octavo EB"){        
-        document.getElementById("imp1").src = "imag/imagOctavoAA.png";}
-        if (de == "Noveno EB"){        
-        document.getElementById("imp1").src = "imag/imagNovenoAA.png";}
-        if (de == "Decimo EB"){        
-        document.getElementById("imp1").src = "imag/imagDecimoAA.png";}
-        if (de == "Primero BA"){        
-        document.getElementById("imp1").src = "imag/imagBachi1AA.png";}
-        if (de == "Segundo BA"){        
-        document.getElementById("imp1").src = "imag/imagBachi2AA.png";}        
-        if (de == "Tercero BA"){        
-        document.getElementById("imp1").src = "imag/imagBachi3AA.png";}       
-    </script>
 </html>
