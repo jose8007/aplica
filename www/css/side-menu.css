@@ -6,6 +6,7 @@ background: #ffffff;
 background-color:#2383b5;    
 }
 
+
 .header {
     padding-top: 5px;
     height: 160px;
@@ -505,6 +506,20 @@ height: 110px;}
     float: left;
     margin-left: 50px;
     padding-top: 20px;
+    font-size: 1em;
+}
+
+#encontrados2{
+    height: 100%;
+    float: left;
+    margin-left: 5px;
+    padding-top: 20px;
+    font-size: 1em;
+    display:none;
+    background-color: cadetblue;
+    color: white;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 #clave1{
